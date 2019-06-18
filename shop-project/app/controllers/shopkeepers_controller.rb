@@ -1,0 +1,2 @@
+class ShopkeepersController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class ShopinventoriesController < ApplicationController
+end

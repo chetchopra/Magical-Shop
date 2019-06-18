@@ -1,0 +1,2 @@
+class TravelerinventoriesController < ApplicationController
+end
