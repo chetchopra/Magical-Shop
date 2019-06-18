@@ -1,4 +1,3 @@
-
 class SessionsController < ApplicationController
 
     def login 
@@ -11,7 +10,11 @@ class SessionsController < ApplicationController
         @user = get_login
         if @user
             session[:user_id] = @user.id
-            redirect_to '/'
+            if @user.class.name == "Traveler"
+                redirect_to '/'
+            else 
+                redirect_to '/sjrdrdgkj'
+            end
         else
             flash[:message] = "Invalid login. Please try again."
             render file:  "app/test-views/sessions/login"
