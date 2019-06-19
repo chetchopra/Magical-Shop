@@ -5,7 +5,4 @@ class Traveler < ApplicationRecord
 
     has_secure_password
 
-    def init
-        self.gold = 100
-    end
 end

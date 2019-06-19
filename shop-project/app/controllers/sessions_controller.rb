@@ -13,7 +13,8 @@ class SessionsController < ApplicationController
             if @user.class.name == "Traveler"
                 redirect_to traveler_path
             else 
-                redirect_to "app/test-views/sessions/login"
+                #change redirect to shopkeeper home page
+                redirect_to shopkeeper_path
             end
         else
             flash[:message] = "Invalid login. Please try again."

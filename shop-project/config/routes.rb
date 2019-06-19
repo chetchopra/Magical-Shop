@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #resources :travelers, except: [:new, :create]
   resources :travelerinventories
   resources :transactions
-  resources :shopkeepers
+  #resources :shopkeepers
   resources :shopinventories
   resources :items
   resources :categories
@@ -19,7 +19,9 @@ Rails.application.routes.draw do
   get '/traveler/edit', to: 'travelers#edit'
   patch '/traveler', to: 'travelers#update'
 
-
+  get '/shopkeeper', to: 'shopkeepers#index'
+  get '/shopkeeper/editstore', to: 'shopkeepers#edit'
+  patch 'shopkeeper', to: 'shopkeepers#update'
 
   get '/signup', to: 'travelers#new'
   post '/signup', to: 'travelers#create'

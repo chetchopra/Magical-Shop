@@ -1,5 +1,7 @@
 class TravelersController < ApplicationController
+    before_action :redirect_user, only: [:index, :edit]
     before_action :get_traveler, only: [:index, :edit, :update]
+    
     def index
         #info that is needed in the travelers home page is here
         @traveler = Traveler.find(session[:user_id])
@@ -12,7 +14,6 @@ class TravelersController < ApplicationController
     end
     
     def create
-        byebug
         @traveler = Traveler.create(name: params[:traveler][:name], job: params[:traveler][:job], traits: params[:traveler][:traits], catchphrase: params[:traveler][:catchphrase], password: params[:traveler][:password], password_confirmation: params[:traveler][:password_confirmation], gold: 100)   
         redirect_to '/'
     end
@@ -28,7 +29,6 @@ class TravelersController < ApplicationController
             redirect_to traveler_edit_path
         end
     end
-
 
     private
 
