@@ -7,6 +7,9 @@ class ShopkeepersController < ApplicationController
     end 
 
     def edit
+        @shopitems = @shopkeeper.get_shopinventories
+        @allitems = Item.all
+        byebug
         render file: "app/test-views/shopkeepers/edit"
     end
     

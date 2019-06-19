@@ -27,11 +27,18 @@ def seed_travelers
     Traveler.create(name: "Chet",job: "For Hire",traits: "Movement, Flexibility" ,catchphrase: "Where is your food" , gold: 1000, password: "chet", password_confirmation: "chet")
 end
 
+def seed_shop_inventory
+    Shopinventory.create(quantity: 10, shopkeeper_id: 1, item_id: 2)
+    Shopinventory.create(quantity: 5, shopkeeper_id: 1, item_id: 5)
+    Shopinventory.create(quantity: 3, shopkeeper_id: 1, item_id: 6)
+end
+
 def seed
     seed_categories
     seed_items
     seed_shopkeeper
     seed_travelers
+    seed_shop_inventory
 end
 
 seed
