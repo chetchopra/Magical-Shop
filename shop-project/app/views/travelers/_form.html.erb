@@ -1,6 +1,6 @@
 <% form_for @traveler do |f| %>
 <%= f.label :name %>
-<%= f.text_field  :name%>
+<%= f.text_field  @traveler(:name)%>
 
 <%= f.label :job %>
 <%= f.text_field :job%>

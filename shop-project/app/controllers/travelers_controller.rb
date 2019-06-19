@@ -7,4 +7,8 @@ class TravelersController < ApplicationController
   def show
     @traveler = Traveler.find(params[:id])
   end
+
+  def edit
+    @traveler = Traveler.find(params[:id])
+  end
 end
