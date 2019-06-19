@@ -22,9 +22,9 @@ def seed_shopkeeper
 end
 
 def seed_travelers
-    Traveler.create(name: "Fabian",job: "For Hire",traits: "Dexterity, Charisma, Speed" ,catchphrase: "I'd like some shiny swords" ,gold: 100)
-    Traveler.create(name: "Bryn", job: "Director of Everything", traits: "Determination, Strength" ,catchphrase: "I need to climb another mountain" ,gold: 1000)
-    Traveler.create(name: "Chet",job: "For Hire",traits: "Movement, Flexibility" ,catchphrase: "Where is your food" ,gold: 1000)
+    Traveler.create(name: "Fabian",job: "For Hire",traits: "Dexterity, Charisma, Speed" ,catchphrase: "I'd like some shiny swords" ,gold: 100, password: "fabian", password_confirmation: "fabian")
+    Traveler.create(name: "Bryn", job: "Director of Everything", traits: "Determination, Strength" ,catchphrase: "I need to climb another mountain" ,gold: 1000, password: "bryn", password_confirmation: "bryn")
+    Traveler.create(name: "Chet",job: "For Hire",traits: "Movement, Flexibility" ,catchphrase: "Where is your food" , gold: 1000, password: "chet", password_confirmation: "chet")
 end
 
 def seed

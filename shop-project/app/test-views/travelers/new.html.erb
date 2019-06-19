@@ -1,0 +1,15 @@
+<%= form_for @traveler, url: signup_path do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+<%= f.label :job %>
+<%= f.text_field :job %><br>
+<%= f.label :traits %>
+<%= f.text_field :traits %><br>
+<%= f.label :catchphrase %>
+<%= f.text_field :catchphrase %><br>
+<%= f.label :password %>
+<%= f.password_field :password %>
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation %><br>
+<%= f.submit "Create" %>
+<% end %>

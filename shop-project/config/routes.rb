@@ -8,14 +8,18 @@ Rails.application.routes.draw do
   resources :items
   resources :categories
 
+  #Routes for login and logout
   get '/login', to: 'sessions#login'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
 
+  #Routes for traveler
   get '/traveler', to: 'travelers#index'
   get '/traveler/edit', to: 'travelers#edit'
   patch '/traveler', to: 'travelers#update'
+
+
 
   get '/signup', to: 'travelers#new'
   post '/signup', to: 'travelers#create'

@@ -6,6 +6,17 @@ class TravelersController < ApplicationController
         render file: "app/test-views/travelers/index"
     end 
 
+    def new
+        @traveler = Traveler.new()
+        render file: "app/test-views/travelers/new"
+    end
+    
+    def create
+        byebug
+        @traveler = Traveler.create(name: params[:traveler][:name], job: params[:traveler][:job], traits: params[:traveler][:traits], catchphrase: params[:traveler][:catchphrase], password: params[:traveler][:password], password_confirmation: params[:traveler][:password_confirmation], gold: 100)   
+        redirect_to '/'
+    end
+
     def edit
         render file: "app/test-views/travelers/edit"
     end
@@ -18,10 +29,11 @@ class TravelersController < ApplicationController
         end
     end
 
+
     private
 
     def traveler_params
-        params.require(:traveler).permit(:traits, :catchphrase)
+        params.require(:traveler).permit(:name, :job, :traits, :catchphrase, :password, :password_confirmation)
     end
 
     def get_traveler
