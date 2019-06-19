@@ -1,1 +1,17 @@
-<%= render 'form' %>
+<div class= "container">
+  <%= form_for @traveler do |f| %>
+<%= f.label :name %><br>
+<%= f.text_field :name%><br>
+
+<%= f.label :job %><br>
+<%= f.text_field :job%><br>
+
+<%= f.label :traits %><br>
+<%= f.text_field :traits%><br>
+
+<%= f.label :catchphrase %><br>
+<%= f.text_field :catchphrase%><br>
+
+<%= f.submit%>
+<% end %>
+</div>

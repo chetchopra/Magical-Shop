@@ -4,9 +4,9 @@ class TravelersController < ApplicationController
     
     def index
         #info that is needed in the travelers home page is here
-        @traveler = Traveler.find(session[:user_id])
-        render file: "app/test-views/travelers/index"
-    end 
+        # @traveler = Traveler.find(get_traveler)
+
+    end
 
     def new
         @traveler = Traveler.new()
@@ -19,9 +19,9 @@ class TravelersController < ApplicationController
     end
 
     def edit
-        render file: "app/test-views/travelers/edit"
+
     end
-    
+
     def update
         if @traveler.update(traveler_params)
             redirect_to traveler_path
