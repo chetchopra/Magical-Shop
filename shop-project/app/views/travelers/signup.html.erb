@@ -1,0 +1,17 @@
+<div class="container">
+
+  <form class="signup" action="/signup" method="post">
+
+    <%= form_tag signup_path do %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+    <%= label_tag :password %>
+    <%= text_field_tag :password %>
+    <%= label_tag :password_confirmation %>
+    <%= text_field_tag :password_confirmation %>
+    <%= submit_tag "New User" %>
+    <% end %>
+
+  </form>
+
+</div>

@@ -2,7 +2,7 @@ class TravelersController < ApplicationController
     before_action :get_traveler, only: [:index, :edit, :update]
     def index
         #info that is needed in the travelers home page is here
-        #@traveler = Traveler.find(get_traveler)
+        # @traveler = Traveler.find(get_traveler)
 
     end
 
