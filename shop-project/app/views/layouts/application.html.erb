@@ -7,9 +7,25 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
+    <nav>
+      <!-- A nav bar with the traveler name, links to shop, edit profile, or log out -->
+      <ul>
+        <li><button type="button" name="button">Home</button></li>
+          <li><button type="button" name="button">Shop</button></li>
+            <li><button type="button" name="button">Edit</button></li>
+              <li><button type="button" name="button">Logout</button></li>
+                </ul>
+    </nav>
+    <div class="container">
+
+
+     <!-- array of cards linking to the shop inventory -->
     <%= yield %>
+    </div>
   </body>
+
 </html>

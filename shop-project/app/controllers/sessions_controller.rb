@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
-    def login 
-        render file:  "app/test-views/sessions/login"
+    def login
+        render file: "app/test-views/sessions/login"
     end
 
     def create
@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             if @user.class.name == "Traveler"
                 redirect_to traveler_path
-            else 
+            else
                 redirect_to '/sjrdrdgkj'
             end
         else
@@ -21,13 +21,13 @@ class SessionsController < ApplicationController
         end
         # session[:username] = params[:user][:username]
     end
-    
+
     def destroy
         session.clear
         redirect_to login_path
     end
 
-    private 
+    private
 
     def get_login
         @user = Shopkeeper.find_by(shop_name: params[:name])
