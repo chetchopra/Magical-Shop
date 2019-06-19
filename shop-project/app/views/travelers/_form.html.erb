@@ -1,0 +1,25 @@
+<% form_for @traveler do |f| %>
+<%= f.label :name %>
+<%= f.text_field  @traveler(:name)%>
+
+<%= f.label :job %>
+<%= f.text_field :job%>
+
+<%= f.label :traits %>
+<%= f.text_field :traits%>
+
+<%= f.label :catchphrase %>
+<%= f.text_field :catchphrase%>
+
+<%= f.submit%>
+<% end %>
+<%= %>
+<%# create_table "travelers", force: :cascade do |t|
+  t.string "name"
+  t.string "job"
+  t.string "traits"
+  t.string "catchphrase"
+  t.integer "gold"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+end %>
