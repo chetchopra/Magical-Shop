@@ -27,5 +27,4 @@ class TravelersController < ApplicationController
     def get_traveler
         @traveler = Traveler.find(session[:user_id])
     end
-    
 end
