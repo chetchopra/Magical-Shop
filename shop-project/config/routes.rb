@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :transactions
   #resources :shopkeepers
   resources :shopinventories
-  resources :items
+  # resources :items
   resources :categories
 
   #Routes for login and logout
@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
+  get '/allitems', to: 'items#index'
+  #get 'item', to: 'items#show'
+  get '/item/:id', to: 'items#show'
 
   #Routes for traveler
   get '/traveler', to: 'travelers#index'
