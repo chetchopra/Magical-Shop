@@ -18,7 +18,7 @@ def seed_items
 end
 
 def seed_shopkeeper
-    ShopKeeper.create(shop_name: "Shop of Holding", isOpen: true)
+    Shopkeeper.create(shop_name: "Shop of Holding", isOpen: true)
 end
 
 def seed_travelers
@@ -30,6 +30,7 @@ end
 def seed
     seed_categories
     seed_items
+    seed_shopkeeper
     seed_travelers
 end
 
