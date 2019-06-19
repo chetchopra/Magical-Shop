@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :travelers, except: [:new, :create]
+  #Removing resource route for Travelers
+  #resources :travelers, except: [:new, :create]
   resources :travelerinventories
   resources :transactions
   resources :shopkeepers
@@ -10,6 +11,11 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#login'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
+
+
+  get '/traveler', to: 'travelers#index'
+  get '/traveler/edit', to: 'travelers#edit'
+  patch '/traveler', to: 'travelers#update'
 
   get '/signup', to: 'travelers#new'
   post '/signup', to: 'travelers#create'

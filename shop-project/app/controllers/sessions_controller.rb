@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         if @user
             session[:user_id] = @user.id
             if @user.class.name == "Traveler"
-                redirect_to '/'
+                redirect_to traveler_path
             else 
                 redirect_to '/sjrdrdgkj'
             end
