@@ -40,7 +40,10 @@ div.right.menu{
 }
 
 // ----------BODY-------------
-
+ .traveler-info p {
+  font-size: 30;
+  font-family: fantasy;
+}
 
 // -----------FORMS-------------
 
@@ -53,4 +56,6 @@ div.right.menu{
    font-size: 20px;
    float: right;
    display:inline-block;
+   background-color: green;
+   color: white;
 }

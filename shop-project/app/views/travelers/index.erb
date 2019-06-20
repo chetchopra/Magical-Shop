@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-=======
-
-<!-- <h1>Our Travelers</h1>
 
 
 
->>>>>>> 31300831cabfc5e6a54672f3fc6982e79f9e98d7
+
 <div class= "container">
+  <div class="traveler-info">
   <h2>Hello, from a specfic traveler</h2><br>
 
 <p>Name:<%=@traveler.name%></p><br>
@@ -15,9 +12,12 @@
 <p>Job:<%=@traveler.job%></p><br>
 
 <p>Catchphrase:<%=@traveler.catchphrase%></p><br>
-
+</div>
 <!-- add a grid of cards showing the traveler inventory -->
-  <div class="card"><%="#{@traveler.name}'s #{@traveler.travelerinventories}" %></div>
+
+<%= @traveler.travelerinventories.each do |inventory| %>
+<%  
+  <div class="card"> <%="#{@traveler.name}'s Stuff" %></div>
   <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
