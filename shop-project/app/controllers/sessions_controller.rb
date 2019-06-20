@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
     def login
-        render file: "app/test-views/sessions/login"
+        render file: "sessions/login"
     end
 
     def create

@@ -9,5 +9,6 @@
 <p>Catchphrase:<%=@traveler.catchphrase%></p><br>
 
 <!-- add a grid of cards showing the traveler inventory -->
-<div class= "card"><%= @traveler.travelerinventories %><br></div>
+<%= @traveler.travelerinventories.each do |item| %>
+<div class="card"> <%= item %><br></div>
 </div>

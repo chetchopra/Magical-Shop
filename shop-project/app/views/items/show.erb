@@ -4,10 +4,11 @@
 <div class ="img">
   <src><%=@item.image_url%></src>
 </div>
-<p>Name:<%=@item.name%></p>
+
+<p>Name:<%= link_to @item.name, "/item/#{@item.id}" %></p>
 <p>Cost:<%=@item.cost%></p>
 <p>Description:<%=@item.description%></p>
-<button type="button" class="btn btn-success" href="">Buy Now</button>
+<button type="button" class="btn btn-success" href="purchase_path">Buy Now</button>
 
 <!-- link_to to purchase form -->
 </div>

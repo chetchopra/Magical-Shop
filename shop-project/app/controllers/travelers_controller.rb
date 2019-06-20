@@ -5,12 +5,13 @@ class TravelersController < ApplicationController
     def index
         #info that is needed in the travelers home page is here
         @traveler = Traveler.find(session[:user_id])
-        render file: "app/test-views/travelers/index"
+        render file: "travelers/index"
     end
 
     def new
+        byebug
         @traveler = Traveler.new()
-        render file: "app/test-views/travelers/new"
+        render file: "travelers/signup"
     end
 
     def create
@@ -19,7 +20,7 @@ class TravelersController < ApplicationController
     end
 
     def edit
-        render file: "app/test-views/travelers/edit"
+        render file: "travelers/edit"
     end
 
     def update
