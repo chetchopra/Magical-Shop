@@ -3,16 +3,16 @@ class ShopkeepersController < ApplicationController
     before_action :redirect_user
     def index
 
-        render file: "app/test-views/shopkeepers/index"
-    end 
+        render file: "app/shopkeepers/index"
+    end
 
     def edit
         @shopitems = @shopkeeper.get_shopinventories
         @allitems = Item.all
         byebug
-        render file: "app/test-views/shopkeepers/edit"
+        render file: "app/shopkeepers/edit"
     end
-    
+
     def update
         if @shopkeeper.update(shopkeeper_params)
             redirect_to shopkeeper_path
