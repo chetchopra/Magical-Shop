@@ -2,6 +2,7 @@ class Shopkeeper < ApplicationRecord
     has_many :transactions
     has_many :shopinventories
     has_many :travelers, through: :transactions
+    validates :shop_name, uniqueness: true
 
     has_secure_password
 
