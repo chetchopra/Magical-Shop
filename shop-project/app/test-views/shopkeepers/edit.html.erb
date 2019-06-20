@@ -1,7 +1,12 @@
-<%=form_for @traveler, url: traveler_path, method: :patch do |f|%>
-<%= f.label :traits%>
-<%= f.text_field :traits%>
-<%= f.label :catchphrase%>
-<%= f.text_field :catchphrase%>
-<%= f.submit%>
-<%end%>
+<% @shopitems.each do |shopinv| %>
+    <%= shopinv.item.name %>
+    <%= shopinv.item.cost %>
+    <%= shopinv.quantity %>
+<% end %>
+<br>
+<h2>Re-Stock</h2>
+<%= form_tag('/shopkeeper',  method: :patch) %>
+<%= select_tag "item_id", options_from_collection_for_select(@allitems, "id", "name")%><br>
+<%= text_field_tag :quantity %><br>
+<%= submit_tag "Buy" %>
+

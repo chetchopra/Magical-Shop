@@ -9,12 +9,16 @@ class ShopkeepersController < ApplicationController
     def edit
         @shopitems = @shopkeeper.get_shopinventories
         @allitems = Item.all
-        byebug
+
         render file: "app/test-views/shopkeepers/edit"
     end
     
     def update
-        if @shopkeeper.update(shopkeeper_params)
+        @item_to_update = @shopkeeper.shopinventories.where(item_id: params[:item_id])
+        if @item_to_update.empty?
+            Shopinventory.create(shopkeeper_id: 1, item_id: params[:item_id], quantity: params[:quantity]) 
+        end
+        if @item_to_update.update(quantity: (params[:quantity].to_i + @item_to_update.first.quantity))
             redirect_to shopkeeper_path
         else
             redirect_to shopkeeper_edit_path

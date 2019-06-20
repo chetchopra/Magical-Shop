@@ -1,0 +1,9 @@
+<% @shopitems.each do |shopinv| %>
+
+<p>Name: <%= shopinv.item.name %></p>
+<p>Cost: <%= shopinv.item.cost %></p>
+<p>Description: <%= shopinv.item.description %></p>
+<p>Quantity: <%= shopinv.quantity %></p>
+<br>
+<% end %>
+<%= link_to "Buy", "shopping/buy"  %>

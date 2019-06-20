@@ -15,7 +15,7 @@
       </a>
       <div class="right menu">
         <% if logged_in? %>
-          <%= link_to 'Create a New Student', home_path, {class: 'item'} %>
+    
           <%= link_to 'Logout', logout_path, {class: 'item'} %>
         <% else %>
         <%= link_to 'Login', login_path, {class: 'item'} %>
