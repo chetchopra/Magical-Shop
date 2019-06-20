@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   patch '/traveler', to: 'travelers#update'
   get 'traveler/shopping', to: 'travelers#shopping'
   get 'traveler/shopping/buy', to: 'travelers#cart'
-  patch 'traveler/shopping', to: 'travelers#purchase'
+  post 'traveler/shopping/buy', to: 'travelers#purchase'
 
   get '/shopkeeper', to: 'shopkeepers#index'
   get '/shopkeeper/editstore', to: 'shopkeepers#edit'

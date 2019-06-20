@@ -5,4 +5,8 @@ class Traveler < ApplicationRecord
 
     has_secure_password
 
+    def my_inventory
+        travelinv = self.travelerinventories
+    end
+
 end

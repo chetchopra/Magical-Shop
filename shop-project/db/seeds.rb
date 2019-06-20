@@ -23,14 +23,26 @@ end
 
 def seed_travelers
     Traveler.create(name: "Fabian",job: "For Hire",traits: "Dexterity, Charisma, Speed" ,catchphrase: "I'd like some shiny swords" ,gold: 100, password: "fabian", password_confirmation: "fabian")
-    Traveler.create(name: "Bryn", job: "Director of Everything", traits: "Determination, Strength" ,catchphrase: "I need to climb another mountain" ,gold: 1000, password: "bryn", password_confirmation: "bryn")
-    Traveler.create(name: "Chet",job: "For Hire",traits: "Movement, Flexibility" ,catchphrase: "Where is your food" , gold: 1000, password: "chet", password_confirmation: "chet")
+    Traveler.create(name: "Bryn", job: "Director of Everything", traits: "Determination, Strength" ,catchphrase: "I need to climb another mountain" ,gold: 100, password: "bryn", password_confirmation: "bryn")
+    Traveler.create(name: "Chet",job: "For Hire",traits: "Movement, Flexibility" ,catchphrase: "Where is your food" , gold: 100, password: "chet", password_confirmation: "chet")
 end
 
 def seed_shop_inventory
     Shopinventory.create(quantity: 10, shopkeeper_id: 1, item_id: 2)
     Shopinventory.create(quantity: 5, shopkeeper_id: 1, item_id: 5)
-    Shopinventory.create(quantity: 3, shopkeeper_id: 1, item_id: 6)
+    Shopinventory.create(quantity: 5, shopkeeper_id: 1, item_id: 6)
+end
+
+def seed_traveler_inventory
+    Travelerinventory.create(quantity: 10, traveler_id: 1, item_id: 1)
+    Travelerinventory.create(quantity: 3, traveler_id: 1, item_id: 4)
+    Travelerinventory.create(quantity: 5, traveler_id: 1, item_id: 7)
+    Travelerinventory.create(quantity: 12, traveler_id: 2, item_id: 3)
+    Travelerinventory.create(quantity: 24, traveler_id: 2, item_id: 5)
+    Travelerinventory.create(quantity: 6, traveler_id: 2, item_id: 1)
+    Travelerinventory.create(quantity: 88, traveler_id: 3, item_id: 8)
+    Travelerinventory.create(quantity: 17, traveler_id: 3, item_id: 7)
+    Travelerinventory.create(quantity: 53, traveler_id: 3, item_id: 9)
 end
 
 def seed
@@ -39,6 +51,7 @@ def seed
     seed_shopkeeper
     seed_travelers
     seed_shop_inventory
+    seed_traveler_inventory
 end
 
 seed

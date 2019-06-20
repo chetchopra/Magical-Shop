@@ -8,6 +8,6 @@ class Shopinventory < ApplicationRecord
     end
 
     def name_with_quantity
-        return "#{self.item.name} - #{self.quantity}g"
+        return "#{self.item.name} - #{self.quantity} left - #{self.item.cost}g"
     end
 end

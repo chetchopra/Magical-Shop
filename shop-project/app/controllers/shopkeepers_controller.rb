@@ -1,14 +1,14 @@
 class ShopkeepersController < ApplicationController
     before_action :get_shopkeeper, only: [:index, :edit, :update]
     before_action :redirect_user
-    def index
+    before_action :edit_items_helper, only: [:edit, :update]
 
-        render file: "app/shopkeepers/index"
+
+    def index
+        render file: "app/test-views/shopkeepers/index"
     end
 
     def edit
-        @shopitems = @shopkeeper.get_shopinventories
-        @allitems = Item.all
         render file: "app/test-views/shopkeepers/edit"
     end
 
@@ -19,7 +19,7 @@ class ShopkeepersController < ApplicationController
             Shopinventory.create(shopkeeper_id: 1, item_id: params[:item_id], quantity: params[:quantity]) 
         
         elsif @item_to_update.update(quantity: (params[:quantity].to_i + @item_to_update.first.quantity))
-            redirect_to shopkeeper_path
+            render file: "app/test-views/shopkeepers/edit"
         
         else
             flash[:message] = "Something went wrong!"
@@ -27,6 +27,7 @@ class ShopkeepersController < ApplicationController
         end
     end
 
+    
     private
 
     def shopkeeper_params
@@ -35,6 +36,11 @@ class ShopkeepersController < ApplicationController
 
     def get_shopkeeper
         @shopkeeper = Shopkeeper.find(session[:user_id])
+    end
+
+    def edit_items_helper
+        @shopitems = @shopkeeper.get_shopinventories
+        @allitems = Item.all
     end
 
 end

@@ -1,5 +1,14 @@
+<%= flash[:message] %><br>
 <%= @traveler.name %><br>
 <%= @traveler.traits %><br>
 <%= @traveler.catchphrase %><br>
 <%= @traveler.job %><br>
-<%= @traveler.travelerinventories %><br>
+<%= @traveler.gold %><br>
+<h2>My Inventory</h2>
+<% @traveler.my_inventory.collect do |inv| %>
+    <p>Name: <%= inv.item.name%></p>
+    <p>Cost: <%= inv.item.cost%></p>
+    <p>Description: <%= inv.item.description%></p>
+    <p>Quantity: <%= inv.quantity%></p>
+    <br>
+<%end%>
