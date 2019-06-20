@@ -7,21 +7,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-  </head>
-  <!-- <div class="ui teal inverted menu">
-      <a href="/" class="item">
-        
-      </a>
-      <div class="right menu">
-        <% if logged_in? %>
     
-          <%= link_to 'Logout', logout_path, {class: 'item'} %>
-        <% else %>
-        <%= link_to 'Login', login_path, {class: 'item'} %>
-      <% end %>
-     </div>
-    </div> -->
+  </head>
+
   <body>
   <%= render 'layouts/navigation_bar' %>
     <div class="container">

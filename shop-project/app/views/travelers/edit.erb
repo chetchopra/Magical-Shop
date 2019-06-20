@@ -1,5 +1,5 @@
 <div class="container">
-<%= form_for @traveler do |f| %>
+<%= form_for @traveler, url: traveler_path, method: :patch do |f| %>
 
 <%= f.label :job %><br>
 <%= f.text_field :job%><br>

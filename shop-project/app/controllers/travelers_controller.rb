@@ -1,7 +1,7 @@
 class TravelersController < ApplicationController
     before_action :redirect_user, only: [:index, :edit]
     before_action :get_traveler, only: [:index, :edit, :update]
-    
+
     def index
         render file: "app/test-views/travelers/index"
     end 
@@ -10,9 +10,9 @@ class TravelersController < ApplicationController
         @traveler = Traveler.new()
         render file: "app/test-views/travelers/new"
     end
-    
+
     def create
-        @traveler = Traveler.create(name: params[:traveler][:name], job: params[:traveler][:job], traits: params[:traveler][:traits], catchphrase: params[:traveler][:catchphrase], password: params[:traveler][:password], password_confirmation: params[:traveler][:password_confirmation], gold: 100)   
+        @traveler = Traveler.create(name: params[:traveler][:name], job: params[:traveler][:job], traits: params[:traveler][:traits], catchphrase: params[:traveler][:catchphrase], password: params[:traveler][:password], password_confirmation: params[:traveler][:password_confirmation], gold: 100)
         redirect_to login_path
     end
 
