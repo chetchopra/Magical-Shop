@@ -33,7 +33,7 @@ class TravelersController < ApplicationController
         @shopitems = Shopkeeper.first.get_shopinventories
         #show all shopinventories objects
         @show_shopitems = Shopkeeper.first.shopinventories_item
-        byebug
+        # byebug
         render file: "app/test-views/travelers/shop"
     end
 

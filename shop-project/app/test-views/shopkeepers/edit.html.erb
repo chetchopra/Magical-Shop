@@ -1,7 +1,9 @@
+<%= flash[:message] %>
 <% @shopitems.each do |shopinv| %>
-    <%= shopinv.item.name %>
-    <%= shopinv.item.cost %>
-    <%= shopinv.quantity %>
+    Name: <%= shopinv.item.name %><br>
+    Cost: <%= shopinv.item.cost %><br>
+    Quantity: <%= shopinv.quantity %><br>
+    <br>
 <% end %>
 <br>
 <h2>Re-Stock</h2>
