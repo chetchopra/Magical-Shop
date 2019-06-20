@@ -9,7 +9,7 @@ class TravelersController < ApplicationController
     end
 
     def new
-        byebug
+        # byebug
         @traveler = Traveler.new()
         render file: "travelers/signup"
     end
