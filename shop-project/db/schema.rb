@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_19_201500) do
+ActiveRecord::Schema.define(version: 2019_06_18_203140) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 2019_06_19_201500) do
   create_table "shopkeepers", force: :cascade do |t|
     t.string "shop_name"
     t.boolean "isOpen"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -68,9 +68,9 @@ ActiveRecord::Schema.define(version: 2019_06_19_201500) do
     t.string "traits"
     t.string "catchphrase"
     t.integer "gold"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
   end
 
 end
