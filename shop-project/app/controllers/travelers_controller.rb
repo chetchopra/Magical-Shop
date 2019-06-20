@@ -3,12 +3,14 @@ class TravelersController < ApplicationController
     before_action :get_traveler, only: [:index, :edit, :update, :purchase]
 
     def index
-        render file: "app/test-views/travelers/index"
-    end 
+      
+        render file: "travelers/index"
+    end
 
     def new
+        # byebug
         @traveler = Traveler.new()
-        render file: "app/test-views/travelers/new"
+        render file: "travelers/signup"
     end
 
     def create
@@ -17,9 +19,9 @@ class TravelersController < ApplicationController
     end
 
     def edit
-        render file: "app/test-views/travelers/edit"
+        render file: "travelers/edit"
     end
-    
+
     def update
         if @traveler.update(traveler_params)
             redirect_to traveler_path
@@ -37,11 +39,11 @@ class TravelersController < ApplicationController
         render file: "app/test-views/travelers/shop"
     end
 
-    def cart 
+    def cart
         @shopitems = Shopkeeper.first.get_shopinventories
         @show_shopitems = Shopkeeper.first.shopinventories_item
-        render file: "app/test-views/travelers/cart" 
-    end 
+        render file: "app/test-views/travelers/cart"
+    end
 
     # t.integer "quantity"
     # t.integer "traveler_id"

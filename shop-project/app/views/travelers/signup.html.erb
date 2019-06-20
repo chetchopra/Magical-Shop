@@ -3,13 +3,28 @@
   <form class="signup" action="/signup" method="post">
 
     <%= form_tag signup_path do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
-    <%= label_tag :password %>
-    <%= text_field_tag :password %>
-    <%= label_tag :password_confirmation %>
-    <%= text_field_tag :password_confirmation %>
-    <%= submit_tag "New Traveler, Adventure Awaits!" %>
+    <%= label_tag :username %><br>
+    <%= text_field_tag :username %><br>
+
+    <%= label_tag :password %><br>
+    <%= text_field_tag :password %><br>
+
+    <%= label_tag :password_confirmation %><br>
+    <%= text_field_tag :password_confirmation %><br>
+
+    <%= label_tag :name %><br>
+    <%= text_field_tag :name %><br>
+
+    <%= label_tag :job %><br>
+    <%= text_field_tag :job %><br>
+
+    <%= label_tag :traits %> <br>
+    <%= text_field_tag :traits %> <br>
+
+    <%= label_tag :catchphrase %><br>
+    <%= text_field_tag :catchphrase %><br>
+
+    <%= submit_tag "Adventure Awaits!" %>
     <% end %>
 
   </form>

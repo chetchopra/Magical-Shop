@@ -4,6 +4,7 @@ class ShopkeepersController < ApplicationController
     before_action :edit_items_helper, only: [:edit, :update]
 
 
+
     def index
         render file: "app/test-views/shopkeepers/index"
     end
@@ -14,13 +15,14 @@ class ShopkeepersController < ApplicationController
 
     def update
         @item_to_update = @shopkeeper.shopinventories.where(item_id: params[:item_id])
-        
+
         if @item_to_update.empty?
-            Shopinventory.create(shopkeeper_id: 1, item_id: params[:item_id], quantity: params[:quantity]) 
-        
+            Shopinventory.create(shopkeeper_id: 1, item_id: params[:item_id], quantity: params[:quantity])
+
         elsif @item_to_update.update(quantity: (params[:quantity].to_i + @item_to_update.first.quantity))
-            render file: "app/test-views/shopkeepers/edit"
-        
+
+            redirect_to shopkeeper_path
+
         else
             flash[:message] = "Something went wrong!"
             redirect_to shopkeeper_edit_path
