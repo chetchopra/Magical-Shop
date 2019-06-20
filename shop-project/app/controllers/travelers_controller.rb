@@ -3,8 +3,7 @@ class TravelersController < ApplicationController
     before_action :get_traveler, only: [:index, :edit, :update]
 
     def index
-        #info that is needed in the travelers home page is here
-        @traveler = Traveler.find(session[:user_id])
+      
         render file: "travelers/index"
     end
 
@@ -29,6 +28,21 @@ class TravelersController < ApplicationController
         else
             redirect_to traveler_edit_path
         end
+    end
+
+    def shopping
+        #show all shopinventories with quantity
+        @shopitems = Shopkeeper.first.get_shopinventories
+        #show all shopinventories objects
+        @show_shopitems = Shopkeeper.first.shopinventories_item
+        # byebug
+        render file: "app/test-views/travelers/shop"
+    end
+
+    def cart
+        @shopitems = Shopkeeper.first.get_shopinventories
+        @show_shopitems = Shopkeeper.first.shopinventories_item
+        render file: "app/test-views/travelers/cart"
     end
 
     private

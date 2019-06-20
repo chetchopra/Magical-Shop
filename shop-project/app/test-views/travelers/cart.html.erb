@@ -1,0 +1,6 @@
+<h2>Buy an Item from the Store</h2>
+<%= form_tag('traveler/shopping',  method: :patch) %>
+<%= select_tag "item_id", options_from_collection_for_select(@shopitems, "item_id", "name_with_quantity")%><br>
+<%= label_tag :quantity%><br>
+<%= number_field_tag :quantity %><br>
+<%= submit_tag "Buy" %>

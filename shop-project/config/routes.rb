@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   get '/traveler', to: 'travelers#index'
   get '/traveler/edit', to: 'travelers#edit'
   patch '/traveler', to: 'travelers#update'
+  get 'traveler/shopping', to: 'travelers#shopping'
+  get 'traveler/shopping/buy', to: 'travelers#cart'
+  patch 'traveler/shopping', to: 'travelers#purchase'
 
   get '/shopkeeper', to: 'shopkeepers#index'
   get '/shopkeeper/editstore', to: 'shopkeepers#edit'
