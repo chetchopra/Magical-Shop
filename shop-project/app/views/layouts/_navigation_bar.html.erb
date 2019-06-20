@@ -14,17 +14,47 @@
   <a class="navbar-brand" href="#">Welcome Adventurer!</a>
 
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul id="the-list" class="navbar-nav">
-      <li class="nav-item ">
-        <button type="button" class="btn btn-info" href=" traveler_edit_path ">Edit Profile</button>
-      </li>
+    <% if session[:user_id] %>
 
-      <li class="nav-item">
-      <button type="button" class="btn btn-info" href=" shopping_path ">Shop Now</button>
-      </li>
-      <li class= "nav-item"><button type="button" class="btn btn-info"href="/allitems ">Home</button></li>
+      <% if session[:isTraveler]%>
+      <!-- Travelers buttons-->
+      <ul id="the-list" class="navbar-nav">
+        
 
+        <li class="nav-item">
+          <%= button_to "Edit", traveler_edit_path, method: :get, class: 'btn btn-info'%>
+        </li>
 
-    </ul>
+        <li class="nav-item">
+          <%= button_to "Shop", traveler_shopping_path, method: :get, class: 'btn btn-info'%>
+        </li>
+
+        <li class="nav-item">
+          <%= button_to "Home", traveler_path, method: :get, class: 'btn btn-info'%>
+        </li>
+
+      </ul>
+
+    
+      <% else %>
+        <!-- Shopkeepers buttons-->
+        <ul id="the-list" class="navbar-nav">
+
+          <li class="nav-item">
+            <%= button_to "Edit", shopkeeper_editstore_path, method: :get, class: 'btn btn-info'%>
+          </li>
+
+          <li class="nav-item">
+            <%= button_to "Dashboard", traveler_shopping_path, method: :get, class: 'btn btn-info'%>
+          </li>
+
+          <li class="nav-item">
+            <%= button_to "Home", shopkeeper_path, method: :get, class: 'btn btn-info'%>
+          </li>
+
+        </ul>
+      <% end %>
+    <% end %>
   </div>
 </nav>
+

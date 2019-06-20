@@ -6,9 +6,22 @@
     <br>
 <% end %>
 <br>
+<div>
 <h2>Re-Stock</h2>
-<%= form_tag('/shopkeeper',  method: :patch) %>
+<%= form_tag('/shopkeeper',  method: :patch) do %>
 <%= select_tag "item_id", options_from_collection_for_select(@allitems, "id", "name")%><br>
 <%= text_field_tag :quantity %><br>
 <%= submit_tag "Buy" %>
+<% end %>
+</div>
+
+
+<div>
+<h2>Remove Item</h2>
+<%= form_tag('/shopkeeper/editstore',  method: :delete) do %>
+<%= select_tag "item_id", options_from_collection_for_select(@shopitems, "item_id", "name_with_quantity")%><br>
+<%= submit_tag "Delete" %>
+<% end %>
+</div>
+
 

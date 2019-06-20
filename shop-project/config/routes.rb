@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get '/shopkeeper', to: 'shopkeepers#index'
   get '/shopkeeper/editstore', to: 'shopkeepers#edit'
   patch 'shopkeeper', to: 'shopkeepers#update'
+  delete 'shopkeeper/editstore', to: 'shopkeepers#destroy'
 
   get '/signup', to: 'travelers#new'
   post '/signup', to: 'travelers#create'

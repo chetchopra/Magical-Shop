@@ -1,7 +1,7 @@
 class ShopkeepersController < ApplicationController
-    before_action :get_shopkeeper, only: [:index, :edit, :update]
+    before_action :get_shopkeeper, only: [:index, :edit, :update, :destroy]
     before_action :redirect_user
-    before_action :edit_items_helper, only: [:edit, :update]
+    before_action :edit_items_helper, only: [:edit, :update, :destroy]
 
 
 
@@ -18,15 +18,20 @@ class ShopkeepersController < ApplicationController
 
         if @item_to_update.empty?
             Shopinventory.create(shopkeeper_id: 1, item_id: params[:item_id], quantity: params[:quantity])
+            render file: "app/test-views/shopkeepers/edit"
 
         elsif @item_to_update.update(quantity: (params[:quantity].to_i + @item_to_update.first.quantity))
-
-            redirect_to shopkeeper_path
+            render file: "app/test-views/shopkeepers/edit"
 
         else
             flash[:message] = "Something went wrong!"
             redirect_to shopkeeper_edit_path
         end
+    end
+
+    def destroy
+        @shopkeeper.shopinventories.where(item_id: params[:item_id]).first.delete
+        render file: "app/test-views/shopkeepers/edit"
     end
 
     

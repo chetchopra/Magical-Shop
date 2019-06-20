@@ -31,9 +31,11 @@ class SessionsController < ApplicationController
     private
 
     def get_login
-        @user = Shopkeeper.find_by(shop_name: params[:name])
+        @user = Shopkeeper.find_by(shop_name: params[:name]) 
+        session[:isTraveler] = false
         if @user == nil
             @user = Traveler.find_by(name: params[:name])
+            session[:isTraveler] = true
         end
         return @user
     end

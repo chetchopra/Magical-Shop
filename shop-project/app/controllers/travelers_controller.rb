@@ -3,23 +3,22 @@ class TravelersController < ApplicationController
     before_action :get_traveler, only: [:index, :edit, :update, :purchase]
 
     def index
-      
-        render file: "travelers/index"
+        render :show
     end
 
     def new
         # byebug
         @traveler = Traveler.new()
-        render file: "travelers/signup"
+        render :signup
     end
 
     def create
-        @traveler = Traveler.create(name: params[:traveler][:name], job: params[:traveler][:job], traits: params[:traveler][:traits], catchphrase: params[:traveler][:catchphrase], password: params[:traveler][:password], password_confirmation: params[:traveler][:password_confirmation], gold: 100)
+        @traveler = Traveler.create(name: params[:name], job: params[:job], traits: params[:traits], catchphrase: params[:catchphrase], password: params[:password], password_confirmation: params[:password_confirmation], gold: 100)
         redirect_to login_path
     end
 
     def edit
-        render file: "travelers/edit"
+        render :edit
     end
 
     def update
