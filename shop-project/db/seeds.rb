@@ -6,15 +6,18 @@ def seed_categories
 end
 
 def seed_items 
-    Item.create(name: "Sword" ,description: "Sharp" ,cost: 10 ,category_id: 1)
-    Item.create(name: "Spear" ,description: "Long and Sharp" ,cost: 15 ,category_id: 1)
-    Item.create(name: "Bow and Arrow" ,description: "Long distance attacks" ,cost: 5 ,category_id: 1)
-    Item.create(name: "Chainmail" ,description: "Heavy but robust" ,cost: 20 ,category_id: 2)
-    Item.create(name: "Chest Plate" ,description: "Heavy and rigid" ,cost: 25 ,category_id: 2)
-    Item.create(name: "Helmet" ,description: "You wont be able to see" ,cost: 15 ,category_id: 2)
-    Item.create(name: "Health Pot" ,description: "Regenerates lost health" ,cost: 10 ,category_id: 3)
-    Item.create(name: "Energy Pot" ,description: "Regenerates lost Energy" ,cost: 10 ,category_id: 3)
-    Item.create(name: "Mental Pot" ,description: "Restores mental strengt" ,cost: 15 ,category_id: 3)
+    Item.create(name: "Sword" ,description: "Sharp" ,cost: 10 ,category_id: 1, image_url: "http://pixeljoint.com/files/icons/xavier_slash_combo_by_ben2theedge.gif")
+    Item.create(name: "Spear" ,description: "Long and Sharp" ,cost: 15 ,category_id: 1, image_url: "http://pixeljoint.com/files/icons/full/protecteur_l.gif")
+    Item.create(name: "Bow and Arrow" ,description: "Long distance attacks" ,cost: 5 ,category_id: 1, image_url: "http://pixeljoint.com/files/icons/full/archer_stage.gif")
+    Item.create(name: "Chainmail" ,description: "Heavy but robust" ,cost: 20 ,category_id: 2, image_url: "http://pixeljoint.com/files/icons/lilmailor.gif")
+    Item.create(name: "Bootsy" ,description: "Keeps your feet warm and cozy", cost: 15, category_id: 2, image_url: "http://pixeljoint.com/files/icons/puss_in_boots.gif")
+    Item.create(name: "Full Armor", description: "Try me, scrub", cost: 100, category_id: 2, image_url: "http://pixeljoint.com/files/icons/full/knight_bw8.gif")
+
+
+    Item.create(name: "Helmet", description: "You wont be able to see", cost: 15, category_id: 2, image_url: "http://pixeljoint.com/files/icons/full/warriorhead.png")
+    Item.create(name: "Health Pot" ,description: "Regenerates lost health" ,cost: 10 ,category_id: 3, image_url: "http://pixeljoint.com/files/icons/potion.gif")
+    Item.create(name: "Energy Pot" ,description: "Regenerates lost Energy" ,cost: 10 ,category_id: 3, image_url: "http://pixeljoint.com/files/icons/full/potionbynifty__r16551418561.png")
+    Item.create(name: "Everything Pot" ,description: "Restores all of the things" ,cost: 100 ,category_id: 3, image_url: "http://pixeljoint.com/files/icons/potion__r16211781521.png")
 end
 
 def seed_shopkeeper
@@ -31,6 +34,11 @@ def seed_shop_inventory
     Shopinventory.create(quantity: 10, shopkeeper_id: 1, item_id: 2)
     Shopinventory.create(quantity: 5, shopkeeper_id: 1, item_id: 5)
     Shopinventory.create(quantity: 5, shopkeeper_id: 1, item_id: 6)
+    Shopinventory.create(quantity: 3, shopkeeper_id: 1, item_id: 3)
+    Shopinventory.create(quantity: 6, shopkeeper_id: 1, item_id: 4)
+    Shopinventory.create(quantity: 33, shopkeeper_id: 1, item_id: 7)
+    Shopinventory.create(quantity: 26, shopkeeper_id: 1, item_id: 1)
+    Shopinventory.create(quantity: 8, shopkeeper_id: 1, item_id: 8)
 end
 
 def seed_traveler_inventory

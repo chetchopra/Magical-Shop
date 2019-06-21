@@ -45,6 +45,8 @@ class ShopkeepersController < ApplicationController
 
         @low_stock_item = Shopinventory.lowest_stocked_item
 
+        @high_stock_item = Shopinventory.highest_stocked_item
+
         render file: "app/test-views/shopkeepers/analytics"
     end
 

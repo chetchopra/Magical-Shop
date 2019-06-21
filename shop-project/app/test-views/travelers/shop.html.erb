@@ -2,10 +2,12 @@
 
   <div class="shopping">
     <% @shopitems.each do |shopinv| %>
+          <img src= <%= shopinv.item.image_url %> ><br>
           <p>Name: <%= shopinv.item.name %></p>
           <p>Cost: <%= shopinv.item.cost %></p>
           <p>Description: <%= shopinv.item.description %></p>
           <p>Quantity: <%= shopinv.quantity %></p><br>
+          
       <% end %>
 
       <a href="shopping/buy"><button class="btn btn-success">Buy</button></a>
