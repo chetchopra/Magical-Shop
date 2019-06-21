@@ -45,6 +45,11 @@ div.right.menu{
   font-family: fantasy;
 }
 
+h1 {
+  font-size: 30;
+  font-family: fantasy;
+}
+
 // -----------FORMS-------------
 
 .login {
@@ -54,8 +59,18 @@ div.right.menu{
 
  #signup-button {
    font-size: 20px;
-   float: right;
+   align-items: center;
+   text-align:justify;
    display:inline-block;
    background-color: green;
    color: white;
+   border-radius: 10%;
+}
+
+.submit-button {
+  margin-top: 15px;
+  border-style: solid;
+  background-color: green;
+  color: white;
+  border-radius: 10%;
 }

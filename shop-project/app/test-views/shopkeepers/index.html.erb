@@ -1,3 +1,16 @@
-<%= @shopkeeper.shop_name %><br>
-<%= @shopkeeper.isOpen %><br>
-<%= @shopkeeper.shopinventories %><br>
+<div class="container">
+
+<h2>Shop Name:  <%= @shopkeeper.shop_name %></h2><br>
+<p>Shop Open?: <%= @shopkeeper.isOpen %></p><br>
+<p>Shop Inventory:  </p>
+<% @shopkeeper.shopinventories.each do |inv| %>
+<div class="card">
+  <h3><%= inv.item.name %></h3><br>
+  <h5>Do you even know how to use this? <%= inv.item.description %></h5><br>
+  <h5> Very expensive, look how much gold you need to buy this: <%= inv.item.cost %></h5><br>
+  <h5> We have this many: <%= inv.quantity %></h5><br>
+  _____________________________________
+  <% end %>
+
+</div>
+</div>
