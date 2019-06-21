@@ -6,7 +6,7 @@
   <%end%>
 
 
-<p>Name: <%=@traveler.name%></p><br>
+
 <p class="gold">Gold: <%=@traveler.gold%></p><br>
 <p>Traits: <%=@traveler.traits%></p><br>
 <p>Job: <%=@traveler.job%></p><br>
@@ -20,6 +20,7 @@
   <% @traveler.travelerinventories.each do |inv| %>
 
     <h4><%= inv.item.name %></h4><br>
+    <img src=<%= inv.item.image_url%>>
     <h5>Do you even know how to use this? <%= inv.item.description %></h5><br>
     <h5> Very expensive, look how much gold you needed to buy this: <%= inv.item.cost %></h5><br>
     <h5> You have this many: <%= inv.quantity %></h5><br>
