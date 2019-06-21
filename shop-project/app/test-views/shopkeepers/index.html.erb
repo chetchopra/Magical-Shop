@@ -1,10 +1,11 @@
 <div class="container">
 
-<h2>Shop Name:  <%= @shopkeeper.shop_name %></h2><br>
-<p>Shop Open?: <%= @shopkeeper.isOpen %></p><br>
-<p>Shop Inventory:  </p>
-<% @shopkeeper.shopinventories.each do |inv| %>
+<h2> <%= @shopkeeper.shop_name %></h2><br>
+<p> Is the Shop Open? <%= @shopkeeper.isOpen %></p><br>
+<p><%= @shopkeeper.shop_name %> Inventory:  </p>
+
 <div class="card">
+  <% @shopkeeper.shopinventories.each do |inv| %>
   <h3><%= inv.item.name %></h3><br>
   <img src=<%= inv.item.image_url%>>
   <h5>Do you even know how to use this? <%= inv.item.description %></h5><br>
