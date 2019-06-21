@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get '/traveler', to: 'travelers#index'
   get '/traveler/edit', to: 'travelers#edit'
   patch '/traveler', to: 'travelers#update'
+  get 'traveler', to: 'travelers#earngold', as: 'earn_gold'
+  post 'traveler', to: 'travelers#updategold', as: 'update_gold'
   get 'traveler/shopping', to: 'travelers#shopping'
   get 'traveler/shopping/buy', to: 'travelers#cart'
   post 'traveler/shopping/buy', to: 'travelers#purchase'

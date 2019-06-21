@@ -1,7 +1,10 @@
 <div class= "container">
-  <h2>Hello, <%="#{@traveler.name}"%></h2><br>
+  <h2>Hello, <%="#{@traveler.name}!!"%></h2><br>
+  <%=form_tag(update_gold_path, method: "post") do %>
+  <%= button_tag "Earn some Gold", class: 'btn btn-info'%>
+  <%#button_to "Earn some Gold", update_gold_path, method: :patch, class: 'btn btn-info'%>
+  <%end%>
 
-<p>Name: <%=@traveler.name%></p><br>
 <p>Gold: <%=@traveler.gold%></p><br>
 <p>Traits: <%=@traveler.traits%></p><br>
 <p>Job: <%=@traveler.job%></p><br>
@@ -10,8 +13,8 @@
 
 <!-- add a grid of cards showing the traveler inventory -->
 
-  <div class="card"> <%="#{@traveler.name}'s Stuff" %></div>
-  <%= @traveler.travelerinventories.each do |inventory| %>
+  <div class="card"> <h3><%="#{@traveler.name}'s Wares" %></h3></div>
+  <% @traveler.travelerinventories.each do |inv| %>
   
     <h3><%= inv.item.name %></h3><br>
     <h5>Do you even know how to use this? <%= inv.item.description %></h5><br>

@@ -44,6 +44,17 @@ class TravelersController < ApplicationController
         render file: "app/test-views/travelers/cart"
     end
 
+    def earngold
+        #byebug
+    end
+
+    def updategold
+        @traveler = Traveler.find(session[:user_id])
+        @traveler.gold += 5
+        @traveler.update(gold: @traveler.gold)
+        redirect_to traveler_path
+    end
+
     # t.integer "quantity"
     # t.integer "traveler_id"
     # t.integer "item_id"

@@ -43,15 +43,22 @@ class Shopkeeper < ApplicationRecord
         
         # @transactions.each do |transaction|
         #     byebug
-        #     if most_frequently_bought == transaction.item
-        #         counter +=1
-        #         if
+        #     if max_counter > counter
+        #         if most_frequently_bought == transaction.item
+        #         count+=1
+        #     else
+        #         most_frequently_bought = transaction 
         #     end
         # end
     end
 
     def most_items_in_traveler_inventory
-
+        # @travelerinventories = Travelerinventory.all
+        # I want to get the most items in a traveler inventory
+        # get a traveler
+        # get the traveler's items count through travelerinventory
+        # counter to count the items
+        # byebug
     end
 
     def most_gold_spent_by_traveler
