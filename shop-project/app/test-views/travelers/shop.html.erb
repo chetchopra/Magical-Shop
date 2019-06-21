@@ -3,6 +3,7 @@
   <div class="shopping">
     <% @shopitems.each do |shopinv| %>
           <p>Name: <%= shopinv.item.name %></p>
+          <img src=<%= inv.item.image_url%>>
           <p>Cost: <%= shopinv.item.cost %></p>
           <p>Description: <%= shopinv.item.description %></p>
           <p>Quantity: <%= shopinv.quantity %></p><br>
