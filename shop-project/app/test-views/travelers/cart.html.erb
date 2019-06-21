@@ -1,6 +1,11 @@
-<h2>Buy an Item from the Store</h2>
-<%= form_tag %>
-<%= select_tag "item_id", options_from_collection_for_select(@shopitems, "item_id", "name_with_quantity")%><br>
-<%= label_tag :quantity%><br>
-<%= number_field_tag :quantity %><br>
-<%= submit_tag "Buy", class: "btn btn-success" %>
+<div class="container">
+  <h2 class="gold">Buy an Item from the Store</h2>
+      <div class="shopping">
+    <%= form_tag %>
+    <%= select_tag "item_id", options_from_collection_for_select(@shopitems, "item_id", "name_with_quantity")%><br>
+    <%= label_tag :quantity%><br>
+    <%= number_field_tag :quantity %><br>
+    <%= submit_tag "Buy", class: "btn btn-success" %>
+    <%= button_to "Buy", traveler_path, method: :get, class: 'btn btn-success'%>
+    </div>
+</div>

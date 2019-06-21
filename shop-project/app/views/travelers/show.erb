@@ -5,22 +5,26 @@
   <%#button_to "Earn some Gold", update_gold_path, method: :patch, class: 'btn btn-info'%>
   <%end%>
 
-<p>Gold: <%=@traveler.gold%></p><br>
+
+<p>Name: <%=@traveler.name%></p><br>
+<p class="gold">Gold: <%=@traveler.gold%></p><br>
 <p>Traits: <%=@traveler.traits%></p><br>
 <p>Job: <%=@traveler.job%></p><br>
 
 <p>Catchphrase: <%=@traveler.catchphrase%></p><br>
 
 <!-- add a grid of cards showing the traveler inventory -->
-
-  <div class="card"> <h3><%="#{@traveler.name}'s Wares" %></h3></div>
+  <div class="card">
+    <h3 class= "traveler-name"><%="#{@traveler.name}'s Stuff" %></h3>
+  </div>
   <% @traveler.travelerinventories.each do |inv| %>
-  
-    <h3><%= inv.item.name %></h3><br>
+
+    <h4><%= inv.item.name %></h4><br>
     <h5>Do you even know how to use this? <%= inv.item.description %></h5><br>
-    <h5> Very expensive, look how much gold you need to buy this: <%= inv.item.cost %></h5><br>
-    <h5> We have this many: <%= inv.quantity %></h5><br>
-    </div>
-    _____________________________________
+    <h5> Very expensive, look how much gold you needed to buy this: <%= inv.item.cost %></h5><br>
+    <h5> You have this many: <%= inv.quantity %></h5><br>
+
+    _____________________________________<br>
+
     <% end %>
 </div>
