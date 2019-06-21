@@ -2,17 +2,27 @@
 
   <div class="shopping">
     <% @shopitems.each do |shopinv| %>
-          <img src= <%= shopinv.item.image_url %> ><br>
-          <p>Name: <%= shopinv.item.name %></p>
-          <img src=<%= inv.item.image_url%>>
-          <p>Cost: <%= shopinv.item.cost %></p>
-          <p>Description: <%= shopinv.item.description %></p>
-          <p>Quantity: <%= shopinv.quantity %></p><br>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src= <%= shopinv.item.image_url%> >
+          <div class="card-body">
+            <h4 class="card-title"><%= shopinv.item.name %></h4>
+            <p class="card-text"><%= shopinv.item.description %></p>
+            <p class="card-text">Cost: <%= shopinv.item.cost %></p>
+            <p class="card-text">Quantity: <%= shopinv.quantity %></p>
+          </div>
+        </div>
+
+
+          <%# <img src= <%= shopinv.item.image_url %> 
+          <%# <p>Name: <%= shopinv.item.name %>
+          <%# <p>Cost: <%= shopinv.item.cost %>
+          <%# <p>Description: <%= shopinv.item.description %>
+          <%# <p>Quantity: <%= shopinv.quantity %>
           
       <% end %>
 
       <a href="shopping/buy"><button class="btn btn-success">Buy</button></a>
 
       <%# <%= button_to "shopping/buy", traveler_path, method: :get, class: 'btn btn-info'%>
-      </div>
+    </div>
 </div>
