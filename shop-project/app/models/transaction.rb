@@ -4,7 +4,8 @@ class Transaction < ApplicationRecord
     belongs_to :item 
 
     def most_frequent_purchased_item
-
+        @transactions = Transition.all
+        byebug
     end
 
     def most_items_in_traveler_inventory

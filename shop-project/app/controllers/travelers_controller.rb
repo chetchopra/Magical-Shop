@@ -76,7 +76,7 @@ class TravelersController < ApplicationController
                 Travelerinventory.create(traveler_id: @traveler.id, item_id: params[:item_id], quantity: params[:quantity])
 
                 Transaction.create(total: @total_cost, traveler_id: @traveler.id, shopkeeper_id: @shopkeeper.id, item_id: @item.id)
-
+                redirect_to traveler_path
 
             else  
                 flash[:message] = "Insufficent Gold!"
@@ -97,7 +97,7 @@ class TravelersController < ApplicationController
             redirect_to traveler_path
         else
             flash[:message] = "Something went wrong!"
-            redirect_to traveler_edit_path
+            redirect_to traveler_path
         end
 
     end

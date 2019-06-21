@@ -32,7 +32,47 @@ class Shopkeeper < ApplicationRecord
         end       
     end
 
+    #---------------------------------------#
+    #---------------------------------------#
 
+    def most_frequent_purchased_item
+        # @transactions = Transaction.all
+        # counter = 0
+        # max_counter = 0
+        # most_frequently_bought = nil
+        
+        # @transactions.each do |transaction|
+        #     byebug
+        #     if most_frequently_bought == transaction.item
+        #         counter +=1
+        #         if
+        #     end
+        # end
+    end
+
+    def most_items_in_traveler_inventory
+
+    end
+
+    def most_gold_spent_by_traveler
+
+    end
+
+    def most_expensive_item
+
+    end
+
+    def cheapest_item
+
+    end
+
+    def lowest_stocked_item
+
+    end
+
+    def highest_stocked_item
+
+    end
 end
 
 

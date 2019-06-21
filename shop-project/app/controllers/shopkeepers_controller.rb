@@ -1,7 +1,7 @@
 class ShopkeepersController < ApplicationController
-    before_action :get_shopkeeper, only: [:index, :edit, :update, :destroy]
+    before_action :get_shopkeeper, only: [:index, :edit, :update, :destroy, :analytics]
     before_action :redirect_user
-    before_action :edit_items_helper, only: [:edit, :update, :destroy]
+    before_action :edit_items_helper, only: [:edit, :update, :destroy, :analytics]
 
 
 
@@ -35,6 +35,7 @@ class ShopkeepersController < ApplicationController
     end
 
     def analytics
+
         render file: "app/test-views/shopkeepers/analytics"
     end
 
