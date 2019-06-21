@@ -6,6 +6,7 @@ class CreateTravelers < ActiveRecord::Migration[5.2]
       t.string :traits
       t.string :catchphrase
       t.integer :gold
+      t.string :password_digest
 
       t.timestamps
     end

@@ -75,6 +75,8 @@ class TravelersController < ApplicationController
                 #add quantity to traveler item
                 Travelerinventory.create(traveler_id: @traveler.id, item_id: params[:item_id], quantity: params[:quantity])
 
+                Transaction.create(total: @total_cost, traveler_id: @traveler.id, shopkeeper_id: @shopkeeper.id, item_id: @item.id)
+
 
             else  
                 flash[:message] = "Insufficent Gold!"
@@ -89,6 +91,8 @@ class TravelersController < ApplicationController
             #subract shopkepper quantity
             @shop_quantity = @shop_quantity - @quantity
             @shop_quantity_record.update(quantity: @shop_quantity)
+
+            Transaction.create(total: @total_cost, traveler_id: @traveler.id, shopkeeper_id: @shopkeeper.id, item_id: @item.id)
 
             redirect_to traveler_path
         else

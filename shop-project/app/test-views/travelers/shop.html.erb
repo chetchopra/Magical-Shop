@@ -1,4 +1,4 @@
-<% @shopitems.each do |shopinv| %>
+<div class= "container>"<% @shopitems.each do |shopinv| %>
 
 <p>Name: <%= shopinv.item.name %></p>
 <p>Cost: <%= shopinv.item.cost %></p>
@@ -6,4 +6,7 @@
 <p>Quantity: <%= shopinv.quantity %></p>
 <br>
 <% end %>
-<%= link_to "Buy", "shopping/buy"  %>
+
+<a href="shopping/buy"><button class="btn btn-success">Buy</button></a>
+<%# <%= button_to "shopping/buy", traveler_path, method: :get, class: 'btn btn-info'%> %>
+</div>
