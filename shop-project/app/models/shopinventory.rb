@@ -20,6 +20,10 @@ class Shopinventory < ApplicationRecord
     end
 
     def self.highest_stocked_item
+        maxi = Shopinventory.maximum(:quantity)
+        max_item_record = Shopinventory.where(quantity: maxi).first
+        max_item = Item.find(max_item_record.item_id)
 
+        @high_stock_item = {max_item => maxi}
     end
 end
