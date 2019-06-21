@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
             end
         else
             flash[:message] = "Invalid login. Please try again."
-            render file:  "app/test-views/sessions/login"
+            render file:  "app/sessions/login"
         end
         # session[:username] = params[:user][:username]
     end
@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
     private
 
     def get_login
-        @user = Shopkeeper.find_by(shop_name: params[:name]) 
+        @user = Shopkeeper.find_by(shop_name: params[:name])
         session[:isTraveler] = false
         if @user == nil
             @user = Traveler.find_by(name: params[:name])

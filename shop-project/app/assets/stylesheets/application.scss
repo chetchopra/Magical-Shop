@@ -49,6 +49,20 @@ h1 {
   font-size: 30;
   font-family: fantasy;
 }
+.gold {
+  color: #ffc107;
+  font-size: 1.2em;
+}
+
+ .traveler-name{
+  color: #337EC9;
+}
+
+.shopping {
+  background-color: #F7F7F7;
+  font-family: monospace;
+
+}
 
 // -----------FORMS-------------
 
@@ -59,8 +73,7 @@ h1 {
 
  #signup-button {
    font-size: 20px;
-   align-items: center;
-   text-align:justify;
+   text-align: center;
    display:inline-block;
    background-color: green;
    color: white;
@@ -73,4 +86,9 @@ h1 {
   background-color: green;
   color: white;
   border-radius: 10%;
+}
+
+.shop-tools{
+ border: 10 10 10 10;
+ background: #F7F7F7;
 }
