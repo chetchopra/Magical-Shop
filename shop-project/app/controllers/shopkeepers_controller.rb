@@ -35,6 +35,15 @@ class ShopkeepersController < ApplicationController
     end
 
     def analytics
+        @most_frequent_purchased_item = Transaction.most_frequent_purchased_item
+
+        @item = Item.find(@most_frequent_purchased_item.keys.first)
+        @item_count = @most_frequent_purchased_item.values.first
+
+        @highest = Transaction.highest_sale
+        @lowest = Transaction.lowest_sale
+
+        @low_stock_item = Shopinventory.lowest_stocked_item
 
         render file: "app/test-views/shopkeepers/analytics"
     end

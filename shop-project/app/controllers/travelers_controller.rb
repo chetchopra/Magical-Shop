@@ -94,8 +94,8 @@ class TravelersController < ApplicationController
                 redirect_to traveler_path
             end
         
-        elsif @item_to_update.update(quantity: (params[:quantity].to_i + @item_to_update.first.quantity)) && isValidTransaction?
-            #traveler gold -
+        elsif isValidTransaction? && @item_to_update.update(quantity: (params[:quantity].to_i + @item_to_update.first.quantity))  
+            
             @traveler.gold = @traveler.gold - @total_cost
             @traveler.update(gold: @traveler.gold)
 
