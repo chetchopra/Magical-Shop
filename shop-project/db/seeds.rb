@@ -10,7 +10,7 @@ def seed_items
     Item.create(name: "Spear" ,description: "Long and Sharp" ,cost: 15 ,category_id: 1, image_url: "http://pixeljoint.com/files/icons/full/protecteur_l.gif")
     Item.create(name: "Bow and Arrow" ,description: "Long distance attacks" ,cost: 5 ,category_id: 1, image_url: "http://pixeljoint.com/files/icons/full/archer_stage.gif")
     Item.create(name: "Chainmail" ,description: "Heavy but robust" ,cost: 20 ,category_id: 2, image_url: "http://pixeljoint.com/files/icons/lilmailor.gif")
-    Item.create(name: "Bootsy" ,description: "Keeps your feet warm and cozy", cost: 15, category_id: 2, image_url: "http://pixeljoint.com/files/icons/puss_in_boots.gif")
+    Item.create(name: "Bootsy" ,description: "Keeps your feet warm", cost: 15, category_id: 2, image_url: "http://pixeljoint.com/files/icons/puss_in_boots.gif")
     Item.create(name: "Full Armor", description: "Try me, scrub", cost: 100, category_id: 2, image_url: "http://pixeljoint.com/files/icons/full/knight_bw8.gif")
 
 

@@ -2,18 +2,23 @@
 <h1><%=@shopkeeper.shop_name%>'s Analytics Page</h1>
 
 <div class="analytics">
+<div class="card">
 <h2>Most Frequently Purchased Item</h2>
 <!-- We want to show the item and the count -->
     <h3>Item: <%=@item.name%></h3>
     <h3>Item Count: <%=@item_count%></h3>
+</div>
 
-<h2>Sales!!!</h2>
+<div class="card">
 <h3>Highest Sale: <%=@highest%>g</h3>
 <h3>Lowest Sale: <%=@lowest%>g</h3>
-
+</div>
+<div class="card">
  <h2>Lowest Stocked Item</h2>
     <h4>Name: <%=@low_stock_item.keys.first.name%></h4>
     <h4>Quantity: <%=@low_stock_item.values.first%></h4>
+    </div>
+    <div class="card">
  <h2>Highest Stocked Item</h2>
      <h4>Name: <%=@high_stock_item.keys.first.name%></h4>
     <h4>Quantity: <%=@high_stock_item.values.first%></h4>
