@@ -1,18 +1,19 @@
 <div class="container">
 
 
-<h1> Users can login, but they can't log out</h1><br>
-<%= flash[:message] %>
-<div class="login">
-<%= form_tag login_path do %>
-<%= label_tag :name %><br>
-<%= text_field_tag :name %><br>
+  <h1> Users can login, but they can't log out</h1><br>
+  <%= flash[:message] %>
+    <div class="login">
+    <%= form_tag login_path do %>
+    <%= label_tag :name %><br>
+    <%= text_field_tag :name %><br>
 
-<%= label_tag :password %><br>
-<%= password_field_tag :password %><br>
-<%= submit_tag "Login" %><br>
-<% end %>
-</div>
-<%= button_to "Signup", signup_path, method: :get, id: "signup-button"%>
-
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %><br>
+    <%= submit_tag "Login" %><br>
+    <% end %>
+    </div>
+      <div class=" container">
+      <%= button_to "Signup", signup_path, method: :get, id: "signup-button"%>
+      </div>
 </div>

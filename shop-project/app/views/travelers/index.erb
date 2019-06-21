@@ -1,29 +1,25 @@
 
-
-
-
 <div class= "container">
   <div class="traveler-info">
-  <h2>Hello, from a specfic traveler</h2><br>
+  <h2>Hello, <%="#{@travler.name}"%></h2><br>
 
-<p>Name:<%=@traveler.name%></p><br>
-<p>Gold:<%=@traveler.gold%></p><br>
-<p>Traits:<%=@traveler.traits%></p><br>
-<p>Job:<%=@traveler.job%></p><br>
+<p>Name: <%=@traveler.name%></p><br>
+<p>Gold: <%=@traveler.gold%></p><br>
+<p>Traits: <%=@traveler.traits%></p><br>
+<p>Job: <%=@traveler.job%></p><br>
 
 <p>Catchphrase:<%=@traveler.catchphrase%></p><br>
 </div>
-<!-- add a grid of cards showing the traveler inventory -->
 
+<!-- add a grid of cards showing the traveler inventory -->
+<div>
 <%= @traveler.travelerinventories.each do |inventory| %>
-<%  
+<%
   <div class="card"> <%="#{@traveler.name}'s Stuff" %></div>
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">stuff</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+  <h3><%= inv.item.name %></h3><br>
+  <h5>Do you even know how to use this? <%= inv.item.description %></h5><br>
+  <h5> Very expensive, look how much gold you need to buy this: <%= inv.item.cost %></h5><br>
+  <h5> We have this many: <%= inv.quantity %></h5><br>
   </div>
-</div>
+  _____________________________________
+  <% end %>
