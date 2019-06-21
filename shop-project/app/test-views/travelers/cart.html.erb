@@ -3,4 +3,4 @@
 <%= select_tag "item_id", options_from_collection_for_select(@shopitems, "item_id", "name_with_quantity")%><br>
 <%= label_tag :quantity%><br>
 <%= number_field_tag :quantity %><br>
-<%= submit_tag "Buy" %>
+<%= submit_tag "Buy", class: "btn btn-success" %>
