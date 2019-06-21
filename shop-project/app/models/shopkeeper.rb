@@ -18,8 +18,6 @@ class Shopkeeper < ApplicationRecord
         end
     end
 
-
-
     #Get Shop Inventory Item Name, Price, Quantity
     def shopinventories_display
         self.get_shopinventories.collect do |shopinventory|

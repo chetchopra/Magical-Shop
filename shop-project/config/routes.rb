@@ -25,11 +25,14 @@ Rails.application.routes.draw do
   get 'traveler/shopping/buy', to: 'travelers#cart'
   post 'traveler/shopping/buy', to: 'travelers#purchase'
 
+  #Routes for Shopkeeper
   get '/shopkeeper', to: 'shopkeepers#index'
+  get '/shopkeeper/analytics', to: 'shopkeepers#analytics'
   get '/shopkeeper/editstore', to: 'shopkeepers#edit'
   patch 'shopkeeper', to: 'shopkeepers#update'
   delete 'shopkeeper/editstore', to: 'shopkeepers#destroy'
 
+  #Routes for Signup
   get '/signup', to: 'travelers#new'
   post '/signup', to: 'travelers#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

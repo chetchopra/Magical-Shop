@@ -34,6 +34,10 @@ class ShopkeepersController < ApplicationController
         render file: "app/test-views/shopkeepers/edit"
     end
 
+    def analytics
+        render file: "app/test-views/shopkeepers/analytics"
+    end
+
     
     private
 
